@@ -1,7 +1,9 @@
 ﻿namespace MailSafer.Delivery
 {
+    using System.Net.Mail;
+
     public interface IMailDelivery
     {
-        void Send(IEmailMessage mailMessage);
+        void Send(MailMessage mailMessage);
     }
 }

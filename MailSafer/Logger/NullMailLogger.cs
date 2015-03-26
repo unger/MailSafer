@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MailSafer.Logger
+﻿namespace MailSafer.Logger
 {
+    using System;
+    using System.Net.Mail;
+
     public class NullMailLogger : IMailLogger
     {
-        public void Info(string message, IEmailMessage mailMessage)
+        public void Info(string message, MailMessage mailMessage)
         {
         }
 
-        public void Error(string message, IEmailMessage mailMessage, Exception exception)
+        public void Error(string message, MailMessage mailMessage, Exception exception)
         {
         }
     }

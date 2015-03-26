@@ -41,10 +41,9 @@
   <ItemGroup>
     <Compile Include="Delivery\IMailDelivery.cs" />
     <Compile Include="Delivery\SmtpClientDelivery.cs" />
-    <Compile Include="EmailMessage.cs" />
     <Compile Include="Logger\IMailLogger.cs" />
-    <Compile Include="IEmailMessage.cs" />
     <Compile Include="Logger\NullMailLogger.cs" />
+    <Compile Include="Storage\FileSystemMailStorage.cs" />
     <Compile Include="Storage\IMailStorage.cs" />
     <Compile Include="MailClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

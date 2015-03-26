@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MailSafer.Tests
+﻿namespace MailSafer.Tests
 {
     using System.Net.Mail;
 
@@ -17,13 +11,18 @@ namespace MailSafer.Tests
     [TestFixture]
     public class MailClientTests
     {
+        [Ignore]
         [Test]
-        public void Send()
+        public void Send_Email()
         {
-            var client = new MailClient(new SmtpClientDelivery(new SmtpClient("localhost")), new NullMailStorage(), new NullMailLogger());
-            var mail = new EmailMessage();
+            var client = new MailClient(
+                new SmtpClientDelivery("localhost"),
+                new FileSystemMailStorage(@"c:\Temp\MailStorage"), 
+                new NullMailLogger());
+
+            var mail = new MailMessage();
             mail.From = new MailAddress("test@test.test");
-            mail.To = new MailAddress("test@test.test");
+            mail.To.Add(new MailAddress("test@test.test"));
             mail.Subject = "Subject";
             mail.Body = "Body";
 

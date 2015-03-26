@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MailSafer
+﻿namespace MailSafer
 {
+    using System;
+    using System.Net.Mail;
+
     using MailSafer.Delivery;
     using MailSafer.Logger;
+    using MailSafer.Storage;
 
     public class MailClient
     {
@@ -24,7 +22,7 @@ namespace MailSafer
             this.logger = logger;
         }
 
-        public void Send(IEmailMessage mailMessage)
+        public void Send(MailMessage mailMessage)
         {
             this.storage.Save(mailMessage);
 
@@ -35,6 +33,7 @@ namespace MailSafer
             catch (Exception e)
             {
                 this.logger.Error("Error sending email", mailMessage, e);
+                throw;
             }
         }
     }
