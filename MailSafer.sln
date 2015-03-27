@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSafer", "MailSafer\Mail
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSafer.Tests", "MailSafer.Tests\MailSafer.Tests.csproj", "{3AC114B2-5C44-4E1B-9818-DCC0D7FBE844}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSafer.Logger.log4net", "MailSafer.Logger.log4net\MailSafer.Logger.log4net.csproj", "{FEA0F96B-098C-4B4C-A60A-42D6C5C63BFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3AC114B2-5C44-4E1B-9818-DCC0D7FBE844}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AC114B2-5C44-4E1B-9818-DCC0D7FBE844}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AC114B2-5C44-4E1B-9818-DCC0D7FBE844}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEA0F96B-098C-4B4C-A60A-42D6C5C63BFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEA0F96B-098C-4B4C-A60A-42D6C5C63BFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEA0F96B-098C-4B4C-A60A-42D6C5C63BFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEA0F96B-098C-4B4C-A60A-42D6C5C63BFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
