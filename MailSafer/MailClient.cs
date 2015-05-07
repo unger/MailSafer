@@ -24,7 +24,15 @@
 
         public void Send(MailMessage mailMessage)
         {
-            this.storage.Save(mailMessage);
+            try
+            {
+                this.storage.Save(mailMessage);
+            }
+            catch (Exception e)
+            {
+                this.logger.Error("Error saving email", mailMessage, e);
+                throw;
+            }
 
             try
             {

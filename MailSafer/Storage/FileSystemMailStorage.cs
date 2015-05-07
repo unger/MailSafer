@@ -1,5 +1,6 @@
 ﻿namespace MailSafer.Storage
 {
+    using System;
     using System.IO;
     using System.Net.Mail;
 
@@ -9,6 +10,8 @@
 
         public FileSystemMailStorage(string path)
         {
+            Directory.CreateDirectory(path);
+
             if (!Directory.Exists(path))
             {
                 throw new DirectoryNotFoundException(string.Format("Folder does not exist: {0}", path));

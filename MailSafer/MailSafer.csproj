@@ -43,6 +43,7 @@
     <Compile Include="Delivery\SmtpClientDelivery.cs" />
     <Compile Include="Logger\IMailLogger.cs" />
     <Compile Include="Logger\NullMailLogger.cs" />
+    <Compile Include="Util\MailMessageSerializer.cs" />
     <Compile Include="Storage\FileSystemMailStorage.cs" />
     <Compile Include="Storage\IMailStorage.cs" />
     <Compile Include="MailClient.cs" />
