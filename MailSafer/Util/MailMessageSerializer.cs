@@ -9,11 +9,9 @@
         {
             var sb = new StringBuilder();
 
-            sb.AppendFormat("From: {0}", mailMessage.From);
-            sb.AppendLine();
-            sb.AppendFormat("To: {0}", string.Join(",", mailMessage.To));
-            sb.AppendLine();
-            sb.AppendFormat("Subject: {0}", mailMessage.Subject);
+            sb.AppendLine(string.Format("From: {0}", mailMessage.From));
+            sb.AppendLine(string.Format("To: {0}", string.Join(",", mailMessage.To)));
+            sb.AppendLine(string.Format("Subject: {0}", mailMessage.Subject));
             
             foreach (var headerKey in mailMessage.Headers.AllKeys)
             {

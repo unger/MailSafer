@@ -18,32 +18,33 @@ namespace MailSafer.Tests
         [Test]
         public void SerializeHeaders_WithSingleRecipient()
         {
-            const string Expected = 
-@"From: info@test.com
-To: info@test.com
-Subject: Test";
+            var expected = new StringBuilder();
+            expected.AppendLine("From: info@test.com");
+            expected.AppendLine("To: info@test.com");
+            expected.AppendLine("Subject: Test");
+
             var headers = MailMessageSerializer.SerializeHeaders(new MailMessage("info@test.com", "info@test.com")
                                                                      {
                                                                          Subject = "Test"
                                                                      });
 
-            Assert.AreEqual(Expected, headers);
+            Assert.AreEqual(expected.ToString(), headers);
         }
 
         [Test]
         public void SerializeHeaders_WithMultipleRecipients()
         {
-            const string Expected =
-@"From: info@test.com
-To: info1@test.com,info2@test.com
-Subject: Test";
+            var expected = new StringBuilder();
+            expected.AppendLine("From: info@test.com");
+            expected.AppendLine("To: info1@test.com,info2@test.com");
+            expected.AppendLine("Subject: Test");
 
             var mailMessage = new MailMessage { From = new MailAddress("info@test.com"), Subject = "Test" };
             mailMessage.To.Add("info1@test.com, info2@test.com");
 
             var headers = MailMessageSerializer.SerializeHeaders(mailMessage);
 
-            Assert.AreEqual(Expected, headers);
+            Assert.AreEqual(expected.ToString(), headers);
         }
     }
 }
